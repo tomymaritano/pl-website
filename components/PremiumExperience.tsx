@@ -32,7 +32,7 @@ const EXPERIENCE_FEATURES = [
 
 export default function PremiumExperience() {
   return (
-    <section className="relative py-16 md:py-24 min-h-[500px] md:h-[700px]">
+    <section className="relative min-h-[500px] md:h-[700px] py-16 md:py-0">
       {/* Background Image */}
       <Image
         src={thumbAutoImage}
@@ -51,12 +51,12 @@ export default function PremiumExperience() {
           {/* Content Area */}
           <div className="px-6 py-8 md:px-10 md:py-11 flex-1">
             {/* Premium Service Label */}
-            <p className="mb-6 text-[var(--color-pink-gold)] uppercase font-bold text-base" style={{ fontFamily: 'var(--font-open-sans)' }}>
+            <p className="mb-6 text-[var(--color-pink-gold)] uppercase font-bold text-base font-sans">
               SERVICIO PREMIUM
             </p>
 
             {/* Main Title */}
-            <h2 className="mb-6 text-[var(--color-black)] text-2xl md:text-[40px] font-normal leading-tight md:leading-[48px]" style={{ fontFamily: 'var(--font-baskerville)' }}>
+            <h2 className="mb-6 text-[var(--color-black)] text-2xl md:text-[40px] font-normal leading-tight md:leading-[48px] font-serif">
               Más que un viaje, <br /> una experiencia.
             </h2>
 
@@ -67,11 +67,11 @@ export default function PremiumExperience() {
                   <div className="text-[var(--color-pink-gold)]">
                     {feature.icon}
                   </div>
-                  <div className="text-[var(--color-black)]">
-                    <span className="font-bold text-[var(--color-black)] text-sm" style={{ fontFamily: 'var(--font-open-sans)' }}>
+                  <div className="text-[var(--color-black)] font-sans">
+                    <span className="font-bold text-sm">
                       {feature.boldText}
                     </span>
-                    <span className="font-normal text-[var(--color-black)] text-sm" style={{ fontFamily: 'var(--font-open-sans)' }}>
+                    <span className="font-normal text-sm">
                       {' | '}{feature.regularText}
                     </span>
                   </div>
@@ -81,7 +81,7 @@ export default function PremiumExperience() {
           </div>
 
           {/* CTA Button - Stuck to bottom */}
-          <button className="w-full py-4 text-white font-semibold" style={{ background: 'var(--gradient-blue)', fontFamily: 'var(--font-open-sans)' }}>
+          <button className="w-full py-4 text-white font-semibold font-sans" style={{ background: 'var(--gradient-blue)' }}>
             HACE TU RESERVA
           </button>
         </div>

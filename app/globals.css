@@ -46,8 +46,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-open-sans);
-  --font-serif: var(--font-baskerville);
+  --font-sans: var(--font-open-sans), system-ui, sans-serif;
+  --font-serif: "Baskerville", "Times New Roman", serif;
 }
 
 @media (prefers-color-scheme: dark) {
