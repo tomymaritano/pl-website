@@ -1,11 +1,15 @@
+'use client'
+
 import Image from 'next/image'
-import { Instagram, Facebook, Youtube, Twitter, ChevronRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 import logoFull from '@/app/images/logofull.svg'
+import SocialLinks from '@/components/shared/SocialLinks'
+import { COLORS } from '@/lib/constants/theme'
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-[var(--color-marine)] py-20">
-      <div className="max-w-6xl mx-auto px-4">
+    <footer className="bg-white text-[var(--color-marine)] py-16">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Logo and Social Media */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-20">
           <Image
@@ -13,14 +17,13 @@ export default function Footer() {
             alt="Private Limo"
             width={320}
             height={100}
-            className="w-auto h-24 md:h-28 lg:h-32"
+            className="w-auto h-20 md:h-22 lg:h-24"
           />
-          <div className="flex gap-6 md:gap-8 lg:gap-12">
-            <Facebook className="w-5 h-5 md:w-6 md:h-6 hover:text-[var(--color-pink-gold)] cursor-pointer stroke-1" />
-            <Twitter className="w-5 h-5 md:w-6 md:h-6 hover:text-[var(--color-pink-gold)] cursor-pointer stroke-1" />
-            <Instagram className="w-5 h-5 md:w-6 md:h-6 hover:text-[var(--color-pink-gold)] cursor-pointer stroke-1" />
-            <Youtube className="w-5 h-5 md:w-6 md:h-6 hover:text-[var(--color-pink-gold)] cursor-pointer stroke-1" />
-          </div>
+          <SocialLinks 
+            size="md" 
+            gap="md" 
+            hoverColor={COLORS.pinkGold}
+          />
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
@@ -92,7 +95,16 @@ export default function Footer() {
             Copyright &copy; 2025 Private Limo | All Rights Reserved - Designed by{' '}
             <a 
               href='https://www.blacro.com' 
-              className="text-[var(--color-pink-gold)] hover:text-[var(--color-navy)] transition-colors font-medium"
+              className="font-medium transition-colors"
+              style={{ 
+                color: COLORS.pinkGold,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = COLORS.navy
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = COLORS.pinkGold
+              }}
               target="_blank"
               rel="noopener noreferrer"
             >

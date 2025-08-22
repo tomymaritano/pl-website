@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
+import { FONTS, FONT_SIZES } from '@/lib/constants/theme'
 
 interface TypographyProps {
   children: ReactNode
@@ -28,7 +29,7 @@ export const SectionTitle = ({ children, className }: TypographyProps) => (
   <h2 
     className={cn("text-white", className)}
     style={{
-      fontFamily: 'var(--font-baskerville)',
+      fontFamily: FONTS.serif,
       fontSize: '40px',
       fontWeight: '400',
       lineHeight: '1.2'
@@ -42,8 +43,8 @@ export const SectionSubtitle = ({ children, className }: TypographyProps) => (
   <p 
     className={cn("text-white leading-relaxed", className)}
     style={{
-      fontFamily: 'var(--font-open-sans)',
-      fontSize: '16px',
+      fontFamily: FONTS.sans,
+      fontSize: FONT_SIZES.base,
       fontWeight: '400'
     }}
   >

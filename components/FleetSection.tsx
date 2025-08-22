@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Users, Briefcase, ShieldCheck, Star } from 'lucide-react'
 import { SectionTitle, SectionSubtitle } from '@/components/ui/Typography'
+import { COLORS, GRADIENTS } from '@/lib/constants/theme'
 import jeepImage from '@/app/images/cars/JeepGrandCherokee.png'
 import mercedesE400Image from '@/app/images/cars/MercedezBenzE400.png'
 import mercedesVitoImage from '@/app/images/cars/MercedesBenzVitoTourer.png'
@@ -49,7 +50,7 @@ const VEHICLES = [
 function VehicleCard({ vehicle }: { vehicle: typeof VEHICLES[0] }) {
   return (
     <div className="overflow-hidden group hover:shadow-2xl transition-shadow duration-300"
-         style={{ background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 27.77%, rgba(255, 255, 255, 0.20) 99.99%)' }}>
+         style={{ background: GRADIENTS.cardOverlay }}>
       {/* Vehicle Image */}
       <div className="relative h-[140px] w-full overflow-hidden">
         <Image
@@ -68,7 +69,7 @@ function VehicleCard({ vehicle }: { vehicle: typeof VEHICLES[0] }) {
         </p>
         
         {/* Vehicle Name */}
-        <h3 className="text-[var(--color-pink-gold)] text-base font-bold font-sans mb-6">
+        <h3 className="text-base font-bold font-sans mb-6" style={{ color: COLORS.pinkGold }}>
           {vehicle.name}
         </h3>
         
@@ -76,7 +77,7 @@ function VehicleCard({ vehicle }: { vehicle: typeof VEHICLES[0] }) {
         <div className="space-y-3">
           {vehicle.features.map((feature, index) => (
             <div key={index} className="flex items-center gap-3">
-              <div className="text-[var(--color-pink-gold)]">
+              <div style={{ color: COLORS.pinkGold }}>
                 {feature.icon}
               </div>
               <span className="text-white text-sm font-sans">
@@ -88,7 +89,7 @@ function VehicleCard({ vehicle }: { vehicle: typeof VEHICLES[0] }) {
         
         {/* CTA Button */}
         <button className="w-full mt-6 py-3 text-white font-semibold font-sans text-sm uppercase tracking-wider hover:opacity-90 transition-opacity" 
-                style={{ background: 'var(--gradient-blue)' }}>
+                style={{ background: GRADIENTS.blue }}>
           Reservar Ahora
         </button>
       </div>
@@ -98,7 +99,7 @@ function VehicleCard({ vehicle }: { vehicle: typeof VEHICLES[0] }) {
 
 export default function FleetSection() {
   return (
-    <section className="py-20 md:py-32 bg-[var(--color-marine)]">
+    <section className="py-20 md:py-32" style={{ backgroundColor: COLORS.marine }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="text-center mb-16">
