@@ -27,26 +27,26 @@ const MobileMenu = ({ isOpen, onClose, language, onLanguageChange, services }: M
       />
       
       {/* Menu Panel */}
-      <div className="absolute inset-0 h-full w-full bg-white shadow-xl">
+      <div className="absolute right-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b">
-          <h2 className="font-sans text-2xl font-medium text-[var(--color-navy)]">
+        <div className="flex items-center justify-between p-6 border-b border-gray-200">
+          <h2 className="font-sans text-xl font-semibold text-[var(--color-navy)]">
             Menú
           </h2>
           <button
             onClick={onClose}
-            className="p-2 text-[var(--color-navy)] hover:text-[var(--color-marine)] transition-colors"
+            className="p-2 text-[var(--color-navy)] hover:text-[var(--color-marine)] transition-colors rounded-full hover:bg-gray-100"
           >
-            <X className="w-8 h-8" />
+            <X className="w-6 h-6" />
           </button>
         </div>
         
         {/* Menu Items */}
-        <nav className="py-8 px-6">
+        <nav className="py-4 px-6 flex flex-col h-full">
           <Link 
             href="/"
             onClick={onClose}
-            className="block py-4 text-2xl font-sans text-[var(--color-navy)] hover:text-[var(--color-marine)] transition-colors border-b border-[var(--color-soft-grey)]"
+            className="block py-4 text-lg font-sans text-[var(--color-navy)] hover:text-[var(--color-marine)] hover:bg-gray-50 rounded-lg px-4 transition-all duration-200"
           >
             Home
           </Link>
@@ -54,7 +54,7 @@ const MobileMenu = ({ isOpen, onClose, language, onLanguageChange, services }: M
           <Link 
             href="/quienes-somos"
             onClick={onClose}
-            className="block py-4 text-2xl font-sans text-[var(--color-navy)] hover:text-[var(--color-marine)] transition-colors border-b border-[var(--color-soft-grey)]"
+            className="block py-4 text-lg font-sans text-[var(--color-navy)] hover:text-[var(--color-marine)] hover:bg-gray-50 rounded-lg px-4 transition-all duration-200"
           >
             Quiénes Somos
           </Link>
@@ -63,27 +63,27 @@ const MobileMenu = ({ isOpen, onClose, language, onLanguageChange, services }: M
           <div>
             <button
               onClick={() => setIsServicesOpen(!isServicesOpen)}
-              className="w-full flex items-center justify-between py-4 text-2xl font-sans text-[var(--color-navy)] hover:text-[var(--color-marine)] transition-colors border-b border-[var(--color-soft-grey)]"
+              className="w-full flex items-center justify-between py-4 text-lg font-sans text-[var(--color-navy)] hover:text-[var(--color-marine)] hover:bg-gray-50 rounded-lg px-4 transition-all duration-200"
             >
               <span>Servicios</span>
               <ChevronDown 
                 className={cn(
-                  "w-4 h-4 transition-transform",
+                  "w-5 h-5 transition-transform duration-200",
                   isServicesOpen && "rotate-180"
                 )}
               />
             </button>
             
             {isServicesOpen && (
-              <div className="bg-[var(--color-soft-grey)]">
+              <div className="ml-4 mb-2">
                 {services.map((service, index) => (
                   <Link
                     key={index}
                     href={`/servicios/${service.toLowerCase().replace(' ', '-')}`}
                     onClick={onClose}
-                    className="block px-10 py-2 text-sm font-sans text-[var(--color-navy)] hover:text-[var(--color-marine)] transition-colors"
+                    className="block px-6 py-3 text-sm font-sans text-[var(--color-navy)] hover:text-[var(--color-marine)] hover:bg-gray-50 rounded-lg transition-all duration-200"
                   >
-                    {service}
+                    • {service}
                   </Link>
                 ))}
               </div>
@@ -93,7 +93,7 @@ const MobileMenu = ({ isOpen, onClose, language, onLanguageChange, services }: M
           <Link 
             href="/nuestra-flota"
             onClick={onClose}
-            className="block py-4 text-2xl font-sans text-[var(--color-navy)] hover:text-[var(--color-marine)] transition-colors border-b border-[var(--color-soft-grey)]"
+            className="block py-4 text-lg font-sans text-[var(--color-navy)] hover:text-[var(--color-marine)] hover:bg-gray-50 rounded-lg px-4 transition-all duration-200"
           >
             Nuestra Flota
           </Link>
@@ -101,24 +101,24 @@ const MobileMenu = ({ isOpen, onClose, language, onLanguageChange, services }: M
           <Link 
             href="/contacto"
             onClick={onClose}
-            className="block py-4 text-2xl font-sans text-[var(--color-navy)] hover:text-[var(--color-marine)] transition-colors border-b border-[var(--color-soft-grey)]"
+            className="block py-4 text-lg font-sans text-[var(--color-navy)] hover:text-[var(--color-marine)] hover:bg-gray-50 rounded-lg px-4 transition-all duration-200"
           >
             Contacto
           </Link>
+          
+          {/* Language Switcher */}
+          <div className="mt-auto border-t border-gray-200 pt-6">
+            <button
+              onClick={() => {
+                onLanguageChange()
+                onClose()
+              }}
+              className="w-full py-3 text-center font-sans font-medium text-white bg-[var(--color-navy)] hover:bg-[var(--color-marine)] rounded-lg transition-colors duration-200"
+            >
+              Idioma: {language}
+            </button>
+          </div>
         </nav>
-        
-        {/* Language Switcher */}
-        <div className="absolute bottom-8 left-6 right-6 border-t border-[var(--color-soft-grey)] pt-6">
-          <button
-            onClick={() => {
-              onLanguageChange()
-              onClose()
-            }}
-            className="w-full py-4 text-xl font-sans font-medium text-[var(--color-navy)] hover:text-[var(--color-marine)] bg-[var(--color-soft-grey)] rounded-md transition-colors"
-          >
-            Idioma: {language}
-          </button>
-        </div>
       </div>
     </div>
   )

@@ -30,7 +30,7 @@ const ServiceCard = ({ icon, title, description, className }: ServiceCardProps) 
             stroke: `url(#${gradientId})`,
             strokeWidth: "2",
             className: "w-6 h-6"
-          } as any)}
+          } as Record<string, unknown>)}
         </svg>
       </div>
       

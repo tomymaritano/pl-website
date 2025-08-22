@@ -1,11 +1,11 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react'
+import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline'
   size?: 'sm' | 'md' | 'lg'
   children: ReactNode
-  asChild?: boolean
   href?: string
 }
 
@@ -14,7 +14,6 @@ const Button = ({
   size = 'md', 
   className, 
   children, 
-  asChild = false,
   href,
   ...props 
 }: ButtonProps) => {
@@ -45,7 +44,6 @@ const Button = ({
   } : {}
   
   if (href) {
-    const Link = require('next/link').default
     return (
       <Link href={href} className={classes} style={primaryStyle}>
         {children}

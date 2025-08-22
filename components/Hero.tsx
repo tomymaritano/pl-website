@@ -8,14 +8,6 @@ import logo3 from '@/app/logos/ZgPxpw.tif.png'
 import logo4 from '@/app/logos/Group.png'
 import logo5 from '@/app/logos/nike 2.png'
 
-const PARTNER_LOGOS = [
-  { src: logo3, alt: "Partner logo 3" },
-  { src: logo1, alt: "Partner logo 1" },
-  { src: logo2, alt: "Alvear Palace Hotel" },
-  { src: logo5, alt: "Nike" },
-  { src: logo4, alt: "Partner logo 4" }
-]
-
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-end pb-15 justify-center border-none">
@@ -100,31 +92,31 @@ export default function Hero() {
             </div>
             
             {/* Logos */}
-            <div className="flex items-center justify-between max-w-6xl mx-auto mt-10 px-8">
+            <div className="grid grid-cols-3 md:flex md:items-center md:justify-between gap-6 md:gap-8 max-w-6xl mx-auto mt-10 px-8 items-center justify-items-center">
               <Image
                 src={logo3}
                 alt="Partner logo 3"
-                className="opacity-90 object-contain"
+                className="opacity-90 object-contain h-8 md:h-auto w-auto"
               />
               <Image
                 src={logo1}
                 alt="Partner logo 1"
-                className="opacity-90 object-contain"
+                className="opacity-90 object-contain h-8 md:h-auto w-auto"
               />
               <Image
                 src={logo2}
                 alt="Alvear Palace Hotel"
-                className="opacity-90 object-contain"
+                className="opacity-90 object-contain h-8 md:h-auto w-auto"
               />
-                <Image
-                  src={logo5}
-                  alt="Nike"
-                  className="opacity-90 object-contain"
-                />
+              <Image
+                src={logo5}
+                alt="Nike"
+                className="opacity-90 object-contain h-8 md:h-auto w-auto"
+              />
               <Image
                 src={logo4}
                 alt="Partner logo 4"
-                className="opacity-90 object-contain"
+                className="opacity-90 object-contain h-8 md:h-auto w-auto"
               />
             </div>
           </div>
