@@ -1,4 +1,4 @@
-import { Users, MapPin, Star, Briefcase, Plane, Calendar } from 'lucide-react'
+import { Users, MapPin, Star, Briefcase, Plane, CalendarCheck2 } from 'lucide-react'
 import { SectionTitle, SectionSubtitle } from '@/components/ui/Typography'
 import ServiceCard from '@/components/ui/ServiceCard'
 
@@ -29,7 +29,7 @@ const SERVICES_DATA = [
   description: "City tours y experiencias personalizadas en Buenos Aires con choferes bilingües y atención de primer nivel."
 },
 {
-  icon: <Calendar className="w-6 h-6" />,
+  icon: <CalendarCheck2 className="w-6 h-6" />,
   title: "Eventos Y Congresos",
   description: "Coordinación experta y traslados precisos para reuniones corporativas y encuentros de gran escala."
 }
