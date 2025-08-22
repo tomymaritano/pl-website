@@ -1,0 +1,1 @@
+- el texto de entre medio deberia ser open sans, luego en el navbar lo mismo y el texto color lbnaco
