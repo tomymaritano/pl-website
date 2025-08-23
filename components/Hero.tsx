@@ -10,7 +10,7 @@ import logo5 from '@/app/logos/nike 2.png'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-end pb-8 md:pb-15 justify-center border-none">
+    <section className="relative min-h-screen flex items-center md:items-end pb-0 md:pb-15 justify-center border-none">
       {/* Background Image */}
       <Image
         src={heroImage}
@@ -52,7 +52,7 @@ export default function Hero() {
           </Button>
           
           {/* Divider and Official Transport Text */}
-          <div className="mt-12 md:mt-20">
+          <div className="mt-8 md:mt-20">
             <div className="hidden md:flex items-center justify-center gap-8">
               {/* Left Line */}
               <svg width="438" height="2" viewBox="0 0 438 2" fill="none" className="w-[438px]">
@@ -98,7 +98,7 @@ export default function Hero() {
             </div>
             
             {/* Logos */}
-            <div className="grid grid-cols-3 md:flex md:items-center md:justify-between gap-4 md:gap-8 max-w-6xl mx-auto mt-6 md:mt-10 px-4 md:px-8 items-center justify-items-center">
+            <div className="grid grid-cols-3 md:flex md:items-center md:justify-between gap-4 md:gap-8 max-w-6xl mx-auto mt-4 md:mt-10 px-4 md:px-8 items-center justify-items-center">
               <Image
                 src={logo3}
                 alt="Partner logo 3"
