@@ -40,7 +40,7 @@ export default function Hero() {
           </h1>
           
           {/* Subtitle */}
-          <p className="text-lg md:text-xl mb-8 md:mb-12 text-white font-[var(--font-open-sans)] leading-relaxed px-4 md:px-0">
+          <p className="text-lg md:text-xl mb-6 md:mb-12 text-white font-[var(--font-open-sans)] leading-relaxed px-4 md:px-0">
             Más de 25 años liderando el traslado premium, ejecutivo y turístico<br className="hidden md:block" />
             <span className="md:hidden"> </span>en Buenos Aires. Confiabilidad, excelencia y exclusividad.
           </p>
@@ -52,7 +52,7 @@ export default function Hero() {
           </Button>
           
           {/* Divider and Official Transport Text */}
-          <div className="mt-8 md:mt-20">
+          <div className="mt-6 md:mt-20">
             <div className="hidden md:flex items-center justify-center gap-8">
               {/* Left Line */}
               <svg width="438" height="2" viewBox="0 0 438 2" fill="none" className="w-[438px]">
