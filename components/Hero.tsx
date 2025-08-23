@@ -10,7 +10,7 @@ import logo5 from '@/app/logos/nike 2.png'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-end pb-15 justify-center border-none">
+    <section className="relative min-h-screen flex items-end pb-8 md:pb-15 justify-center border-none">
       {/* Background Image */}
       <Image
         src={heroImage}
@@ -28,10 +28,9 @@ export default function Hero() {
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Title */}
           <h1 
-            className="uppercase tracking-wider mb-6 text-white"
+            className="uppercase tracking-wider mb-4 md:mb-6 text-white text-3xl md:text-5xl"
             style={{
               fontFamily: 'var(--font-baskerville)',
-              fontSize: '48px',
               fontWeight: '400',
               lineHeight: '1.2'
             }}
@@ -41,9 +40,9 @@ export default function Hero() {
           </h1>
           
           {/* Subtitle */}
-          <p className="text-xl mb-12 text-white font-[var(--font-open-sans)] leading-relaxed">
-            Más de 25 años liderando el traslado premium, ejecutivo y turístico<br />
-            en Buenos Aires. Confiabilidad, excelencia y exclusividad.
+          <p className="text-lg md:text-xl mb-8 md:mb-12 text-white font-[var(--font-open-sans)] leading-relaxed px-4 md:px-0">
+            Más de 25 años liderando el traslado premium, ejecutivo y turístico<br className="hidden md:block" />
+            <span className="md:hidden"> </span>en Buenos Aires. Confiabilidad, excelencia y exclusividad.
           </p>
           
           {/* CTA Button */}
@@ -53,8 +52,8 @@ export default function Hero() {
           </Button>
           
           {/* Divider and Official Transport Text */}
-          <div className="mt-20">
-            <div className="flex items-center justify-center gap-8">
+          <div className="mt-12 md:mt-20">
+            <div className="hidden md:flex items-center justify-center gap-8">
               {/* Left Line */}
               <svg width="438" height="2" viewBox="0 0 438 2" fill="none" className="w-[438px]">
                 <path d="M1 1H437" stroke="url(#gradient-left)" strokeLinecap="round"/>
@@ -91,32 +90,39 @@ export default function Hero() {
               </svg>
             </div>
             
+            {/* Mobile Text Only */}
+            <div className="md:hidden">
+              <p className="text-white text-sm px-4">
+                Transporte Oficial de Alvear Palace Hotel
+              </p>
+            </div>
+            
             {/* Logos */}
-            <div className="grid grid-cols-3 md:flex md:items-center md:justify-between gap-6 md:gap-8 max-w-6xl mx-auto mt-10 px-8 items-center justify-items-center">
+            <div className="grid grid-cols-3 md:flex md:items-center md:justify-between gap-4 md:gap-8 max-w-6xl mx-auto mt-6 md:mt-10 px-4 md:px-8 items-center justify-items-center">
               <Image
                 src={logo3}
                 alt="Partner logo 3"
-                className="opacity-90 object-contain h-8 md:h-auto w-auto"
+                className="opacity-90 object-contain h-6 md:h-auto w-auto"
               />
               <Image
                 src={logo1}
                 alt="Partner logo 1"
-                className="opacity-90 object-contain h-8 md:h-auto w-auto"
+                className="opacity-90 object-contain h-6 md:h-auto w-auto"
               />
               <Image
                 src={logo2}
                 alt="Alvear Palace Hotel"
-                className="opacity-90 object-contain h-8 md:h-auto w-auto"
+                className="opacity-90 object-contain h-6 md:h-auto w-auto"
               />
               <Image
                 src={logo5}
                 alt="Nike"
-                className="opacity-90 object-contain h-8 md:h-auto w-auto"
+                className="opacity-90 object-contain h-6 md:h-auto w-auto"
               />
               <Image
                 src={logo4}
                 alt="Partner logo 4"
-                className="opacity-90 object-contain h-8 md:h-auto w-auto"
+                className="opacity-90 object-contain h-6 md:h-auto w-auto"
               />
             </div>
           </div>
